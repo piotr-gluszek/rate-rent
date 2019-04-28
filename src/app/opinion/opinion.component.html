@@ -1,0 +1,43 @@
+
+
+
+<div class='card'>
+  <div class='card-header'>
+    <div class = 'row'>
+        <div class = 'col'>
+            <blockquote class="blockquote mb-0">
+                <footer class="blockquote-footer">
+            {{opinion.author}}
+            </footer>
+            </blockquote>
+        </div>
+        <div class = 'col'>
+          <div class = 'just-right'>+{{opinion.rating}}</div>  
+        </div>
+    </div> 
+  </div>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='stars-rating' *ngFor='let star of [].constructor(opinion.stars)'>
+        <div class = 'col-md'><i class="fa fa-star" siz></i></div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <div class='card-header'>Benefits</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let benefit of opinion.benefits">
+            + {{benefit}}</li>
+        </ul>
+      </div>
+      <div class='col'>
+        <div class='card-header'>Drawbacks</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let drawback of opinion.drawbacks">
+            - {{drawback}}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

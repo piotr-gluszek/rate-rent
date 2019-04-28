@@ -1,0 +1,9 @@
+<div *ngIf='place; else notFound'>
+  <div class='opinion-item' *ngFor='let opinion of place.opinions'>
+    <app-opinion [opinion]='opinion'></app-opinion>
+  </div>
+</div>
+
+<ng-template #notFound>
+  Opinions for this location was not found. Go ahead you can add yours!
+</ng-template>
