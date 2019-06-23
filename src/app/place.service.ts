@@ -12,7 +12,7 @@ export class PlaceService {
   constructor(private db: AngularFirestore) {
   }
 
-  getOpinions(placeId: string): Observable<firebase.firestore.DocumentSnapshot> {
-    return this.db.doc(`/places/${placeId}`).get();
+  getOpinions(placeId: string): firebase.firestore.DocumentReference {
+    return this.db.doc(`/places/${placeId}`).ref;
   }
 }

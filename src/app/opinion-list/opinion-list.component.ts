@@ -11,19 +11,17 @@ export class OpinionListComponent implements OnInit {
   constructor(
     private placeService: PlaceService) { }
 
- place: any
-  
+  place: any
+
   ngOnInit() {
     this.placeService.placeIdSubject.subscribe(
       placeId => {
-        this.placeService.getOpinions(placeId).subscribe(
-          docRef => {
-            this.place = docRef.data()
-            console.log('Document data:')
-            console.log(this.place)
-          }
-        )
+        this.placeService.getOpinions(placeId).onSnapshot((doc) => {
+          this.place = doc.data()
+          console.log('[' + new Date().toTimeString().substring(0, 8) + '] Document data:')
+          console.log(this.place)
+        })
       }
-    ) 
+    )
   }
 }
