@@ -2,9 +2,19 @@
         <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
                 class="form-control" #search [formControl]="searchControl">
 </div>
-<!-- <agm-map [latitude]='latitude' [longitude]='longitude' [mapTypeId]='mapType' [(zoom)]='zoom'
-        (mapClick)="placeMarker($event.coords.lat, $event.coords.lng)">
-        <agm-marker *ngIf="marker" [(latitude)]="marker.latitude" [(longitude)]="marker.longitude"
-                [opacity]="marker.alpha" [markerDraggable]="false" (markerClick)="selectMarker($event)">
+<agm-map 
+        [latitude]='latitude' 
+        [longitude]='longitude' 
+        [mapTypeId]='mapType' 
+        [(zoom)]='zoom'
+        (mapClick)="placeMarker($event.coords.lat, $event.coords.lng)"
+        [scrollwheel]="null"
+        [gestureHandling]='gestureHandling'>
+        <agm-marker *ngIf="marker" 
+                [(latitude)]="marker.latitude" 
+                [(longitude)]="marker.longitude"
+                [opacity]="marker.alpha" 
+                [markerDraggable]="false" 
+                (markerClick)="selectMarker($event)">
         </agm-marker>
-</agm-map> -->
+</agm-map>

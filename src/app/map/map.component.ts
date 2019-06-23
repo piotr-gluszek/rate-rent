@@ -17,6 +17,7 @@ export class MapComponent implements OnInit {
   longitude = 19.02341743655643;
   mapType = 'roadmap';
   zoom = 13;
+  gestureHandling = 'cooperative';
   marker: Marker;
   searchControl: FormControl;
   @ViewChild("search")
